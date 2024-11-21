@@ -1,3 +1,0 @@
-const premier
-print 'premier'
-
