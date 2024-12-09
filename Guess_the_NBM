@@ -16,7 +16,7 @@ while tentatives < limit_essais:
         print(f" tu en es à ta {tentatives} ème tentatives, il te reste {limit_essais - tentatives} essais ")
         tentatives +=1
     else:
-        print("bravo t'es le goat")
+        print(f"bravo t'es le goat le nombre à trouvé était belle et bien {nbm_aléatoire} !! ")
         break
 if limit_essais == tentatives and nbm_aléatoire != nbm_aleatoire_user :
     print(f" PERDU ! Tu as épuisé toute tes chances ! le chiffre à trouver était {nbm_aléatoire} ")
