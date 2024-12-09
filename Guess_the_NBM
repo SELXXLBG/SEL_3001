@@ -1,22 +1,22 @@
+from random import randint
 import random
-nbm_random = random.randint(1,10)
-essais = 0
-essais_max = 5
 
-print("tu vas jouer a 'Guess the numbers' t'as 5 essais bonne chance ! ")
-while essais < essais_max :
-    reponds = int(input("choisi un nombre entre 1 et 10 : "))
-    if reponds > nbm_random :
-        print(f"choisi un nombre plus petit que {reponds}")
-        essais += 1
-        print(f"il te reste {essais_max - essais} essais ")
-    elif reponds < nbm_random :
-        print(f"choisi un nombre plus grand que {reponds}")
-        essais += 1
-        print(f"il te reste {essais} essais ")
-    else : 
-        print(F"Bravo !! le nombre à trouvé été belle et bien {nbm_random} ! ")
+tentatives = 0
+limit_essais = 5
+nbm_aléatoire = randint(1,20)
+while tentatives < limit_essais:
+    tentatives +=1
+    nbm_aleatoire_user = int(input("donne un nombre de 1 à 20 : "))
+    if nbm_aleatoire_user<nbm_aléatoire:
+        print(f"un chiffre plus grand que {nbm_aleatoire_user}")
+        print(f" tu en es à ta {tentatives} ème tentatives, il te reste {limit_essais - tentatives} essais ")
+        tentatives +=1
+    elif nbm_aleatoire_user>nbm_aléatoire:
+        print(f"un chiffre plus petit que {nbm_aleatoire_user}")
+        print(f" tu en es à ta {tentatives} ème tentatives, il te reste {limit_essais - tentatives} essais ")
+        tentatives +=1
+    else:
+        print("bravo t'es le goat")
         break
-    if essais >= essais_max :
-        print(f"t'as perdu le nombre à trouver était {nbm_random}")
-        break
+if limit_essais == tentatives and nbm_aléatoire != nbm_aleatoire_user :
+    print(f" PERDU ! Tu as épuisé toute tes chances ! le chiffre à trouver était {nbm_aléatoire} ")
